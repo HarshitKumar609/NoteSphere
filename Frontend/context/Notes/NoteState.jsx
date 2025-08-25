@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NotesContext from "./NotesContext";
 
 const Notestate = (props) => {
-  const host = "http://localhost:3000";
+  const host = "https://note-sphere-five.vercel.app/";
   const notesData = [];
 
   const [notes, SetNotes] = useState(notesData);
@@ -14,12 +14,9 @@ const Notestate = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
-        // "auth-token":
-        //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg4YTMyYWQ4Nzg3ZWJkNjUyYjg5MDBkIn0sImlhdCI6MTc1Mzg4NzQwNn0.F3xkILFwApdftppym9ZtUNvABub0pNoBqZNw5HOg8tI",
       },
     });
     const json = await response.json();
-    // console.log(json);
     SetNotes(json);
   };
 
@@ -35,7 +32,6 @@ const Notestate = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const json = await response.json();
-    console.log("Server response:", json);
 
     // If server returns { note: {...} }
     if (json.note) {
@@ -57,9 +53,7 @@ const Notestate = (props) => {
       },
     });
     const json = await response.json();
-    console.log(json);
     //logic
-    console.log("deleting the note" + id);
     const newNote = notes.filter((note) => {
       return note._id != id;
     });

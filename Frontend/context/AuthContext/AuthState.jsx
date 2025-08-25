@@ -8,7 +8,7 @@ const AuthState = (props) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const hostUrl = "http://localhost:3000";
+  const hostUrl = "https://note-sphere-five.vercel.app/";
 
   // Load user if token exists
   const loadUser = async (customToken = token) => {
@@ -46,7 +46,6 @@ const AuthState = (props) => {
       });
       const data = await res.json();
       if (res.ok) {
-        // console.log(data, isAuthenticated)
         if (data.authtoken) {
           setToken(data.authtoken);
           localStorage.setItem("token", data.authtoken);
@@ -71,9 +70,7 @@ const AuthState = (props) => {
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      console.log(data);
       if (res.ok) {
-        // console.log(data, isAuthenticated)
         if (data.authtoken) {
           setToken(data.authtoken);
           localStorage.setItem("token", data.authtoken);
