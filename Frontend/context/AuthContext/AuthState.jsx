@@ -8,7 +8,7 @@ const AuthState = (props) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const hostUrl = "https://note-sphere-five.vercel.app/";
+  const hostUrl = "https://note-sphere-five.vercel.app";
 
   // Load user if token exists
   const loadUser = async (customToken = token) => {
