@@ -69,9 +69,3 @@ PRs and ideas are welcome!
 ---
 
 Made with ❤️ by Harshit Kumar
-
-PRs and ideas are welcome!
-
----
-
-Made with ❤️ by Aniket Kumar
